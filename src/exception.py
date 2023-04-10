@@ -1,5 +1,5 @@
 import sys
-import logging
+from src.logger import logging
 
 def error_message_detail(error, error_detail:sys):   #the error_detail will be present in the sys module
     _,_,exc_tb=error_detail.exc_info()
