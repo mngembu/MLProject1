@@ -5,4 +5,5 @@ matplotlib
 scikit-learn
 catboost
 xgboost
+dill
 #-e .    #comment this out each time you are installing a new package in 'pip install requirements.txt'. It is only used for building the package
