@@ -33,7 +33,7 @@ class DataTransformation:
             num_pipeline = Pipeline(                                   #### create the numerical pipeline
                 steps = [
                 ("imputer", SimpleImputer(strategy="median")),             #use median since we saw a lot of outliers
-                ("scaler", StandardScaler(with_mean=False))                             #just created a pipeline that handles missing values and perform standard scaling
+                ("scaler", StandardScaler(with_mean=False))        #just created a pipeline that handles missing values and perform standard scaling
                 ]                                                  #this pipeline will run on the training set (fit_transform) and on the test set (transform)
             )
 
@@ -41,7 +41,7 @@ class DataTransformation:
                 steps = [
                 ("imputer", SimpleImputer(strategy="most_frequent")),
                 ("one_hot_encoder", OneHotEncoder()),
-                ("scaler", StandardScaler(with_mean=False))
+                ("scaler", StandardScaler(with_mean=False))    # I added the "with_mean=False" because of the parse matrix error I got
                 ]
             )
 
