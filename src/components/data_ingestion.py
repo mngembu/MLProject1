@@ -27,6 +27,9 @@ class DataIngestion:            #used __init__ constructor here since we're not 
         logging.info("Entered the data ingestion method or component")
         try:
             df = pd.read_csv('notebook\data\stud.csv')
+            df.rename(columns={'race/ethnicity':'race_ethnicity', 'parental level of education':'parental_level_of_education','test preparation course':'test_preparation_course',
+                   'math score':'math_score', 'reading score':'reading_score', 'writing score':'writing_score'}, inplace=True) 
+            
             logging.info("Read the dataset as a dataframe")
 
             # create the folder for the train, test and raw data
