@@ -1,4 +1,5 @@
 import sys
+import os
 import pandas as pd
 from src.exception import CustomException
 from src.utils import load_object          #to load our pickle files
@@ -10,8 +11,8 @@ class PredictPipeline:
 
     def predict(self, features):     #create the actual prediction function
         try:
-            model_path = 'artifacts\model.pkl'
-            preprocessor_path = 'artifacts\preprocessor.pkl'   #initialize the paths to the model and preprocessor pickle files
+            model_path = os.path.join('artifacts', 'model.pkl')
+            preprocessor_path = os.path.join('artifacts', 'preprocessor.pkl')   #initialize the paths to the model and preprocessor pickle files
             model = load_object(file_path=model_path)     #go to utils and create the load_object function
             preprocessor = load_object(file_path=preprocessor_path)      #load the model path and the preprocessor path
             data_scaled = preprocessor.transform(features)         #scale the data using the preprocessor
